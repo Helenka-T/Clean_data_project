@@ -41,7 +41,7 @@ all.data$activity <- as.factor(activity.names[all.activity])
 feature.names <- gsub("-", ".", gsub("[()]", "", feature.names))
 colnames(all.data) <- append(feature.names, c("activity"))
 
-write.table(all.data, "C:/Users/Elena/Desktop/tidy_data.txt")
+write.table(all.data, "C:/Users/Elena/Desktop/all_data.txt")
 
 
 # Item 5: Creating the 2nd tidy data set
@@ -65,4 +65,5 @@ for (i in 1:30) {
         }
 }
 # Put subject and activity to the front
-tidy1 <- tidy[,c(ncol(tidy), ncol(tidy)-1, seq(1,ncol(tidy)-2))]
+tidy <- tidy[,c(ncol(tidy), ncol(tidy)-1, seq(1,ncol(tidy)-2))]
+write.table(tidy, "C:/Users/Elena/Desktop/tidy_data.txt")
